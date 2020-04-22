@@ -10,7 +10,10 @@ public class Test {
 
     @RequestMapping("/c")
     public String s(){
+        System.out.println("111");
         return "index";
+
+
     }
 
 }
