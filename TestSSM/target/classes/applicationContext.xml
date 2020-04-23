@@ -19,28 +19,43 @@
        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
-    <!--连接池 -->
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <!-- mysql 连接池 -->
+  <!--   <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/test1?useUnicode=true&amp;characterEncoding=utf8" />
+      	 <property name="url" value="jdbc:mysql://127.0.0.1:3306/tset?serverTimezone=GMT&amp;useUnicode=true&amp;characterEncoding=utf8"/>
         <property name="username" value="root" />
         <property name="password" value="root" />
-    </bean>
+    </bean> -->
 
+<!-- oracle 连接池 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="oracle.jdbc.OracleDriver" />
+      	 <property name="url" value="jdbc:oracle:thin:@192.168.8.1:1521:HGKJ"/>
+        <property name="username" value="climate" />
+        <property name="password" value="climate" />
+    </bean> 
 
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"></property>
-        <property name="typeAliasesPackage" value="com.hg.entity"></property>
-    </bean>
 
     <!--注册了一个Mapper的扫描器-->
     <!--注入一个SqlSesionFactory的bean 为了创建SqlSesionTemplate对象（封装了sqlsesion的功能）-->
     <!--通过扫描指定的包，将包下的Mapper接口和绑定的mapper文件扫描
-    自动注册mapper接口的代理对象 注入sqlseesiotemplate-->
-    <bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
-        <property name="basePackage" value="com.hg.mapper"></property>
+  		  自动注册mapper接口的代理对象 注入sqlseesiotemplate-->
+    <bean  class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    	<property name="basePackage" value="com.hg.dao"></property>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- mapper扫描 -->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"></property>
+    	<property name="dataSource" ref="dataSource" />
+    </bean>
+
+
+
+    
+   
+    
 
     <!--注册事务管理器 负责做事务的处理-->
     <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
