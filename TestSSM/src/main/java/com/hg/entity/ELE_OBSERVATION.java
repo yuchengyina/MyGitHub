@@ -12,18 +12,18 @@ public class ELE_OBSERVATION {
     String wind_d;//风向
     String wind_s;//风速
     String wind_v;//风向变化
-    float visibility;//主导能见度
-    float rvr;//跑道视程
-    float mor;//光学能见度
+    double visibility;//主导能见度
+    double rvr;//跑道视程
+    double mor;//光学能见度
     String pw;//天气现象列表
     Date tw_begin;//天气现象开始时间
     Date tw_end;//天气现象终止时间
     int rain;//降水量mm
-    float snow;//积雪深度cm
-    float cld_sum;//总云量
-    float cld_l_sum;//低云量
-    float cld_m_sum;//中云量
-    float cld_h_sum;//高云量
+    double snow;//积雪深度cm
+    double cld_sum;//总云量
+    double cld_l_sum;//低云量
+    double cld_m_sum;//中云量
+    double cld_h_sum;//高云量
     String cld_l1;//低云族
     String cld_l2;//
     String cld_l3;//
@@ -33,19 +33,19 @@ public class ELE_OBSERVATION {
     String cld_h1;//高云族
     String cld_h2;//
     String cld_h3;//
-    float temp;//温度
-    float temp_max;//最高温度
-    float temp_min;//最低温度
-    float rh;//湿度
-    float dp;//露点温度
-    float qnh;//修正海平面气压
-    float qfe;//场压
+    double temp;//温度
+    double temp_max;//最高温度
+    double temp_min;//最低温度
+    double rh;//湿度
+    double dp;//露点温度
+    double qnh;//修正海平面气压
+    double qfe;//场压
     String remark1;//备注1
     String remark2;//备注2
     String ismodified;//是否被修改1是
     String operator;//操作者
     Date inserttime;//插入时间
-    float gust_s;//阵风风速
+    double gust_s;//阵风风速
     String byyyy;//北京时间yyyy
     String bmm;//北京时间mm
     String bdd;//北京时间dd
@@ -125,27 +125,27 @@ public class ELE_OBSERVATION {
         this.wind_v = wind_v;
     }
 
-    public float getVisibility() {
+    public double getVisibility() {
         return visibility;
     }
 
-    public void setVisibility(float visibility) {
+    public void setVisibility(double visibility) {
         this.visibility = visibility;
     }
 
-    public float getRvr() {
+    public double getRvr() {
         return rvr;
     }
 
-    public void setRvr(float rvr) {
+    public void setRvr(double rvr) {
         this.rvr = rvr;
     }
 
-    public float getMor() {
+    public double getMor() {
         return mor;
     }
 
-    public void setMor(float mor) {
+    public void setMor(double mor) {
         this.mor = mor;
     }
 
@@ -181,43 +181,43 @@ public class ELE_OBSERVATION {
         this.rain = rain;
     }
 
-    public float getSnow() {
+    public double getSnow() {
         return snow;
     }
 
-    public void setSnow(float snow) {
+    public void setSnow(double snow) {
         this.snow = snow;
     }
 
-    public float getCld_sum() {
+    public double getCld_sum() {
         return cld_sum;
     }
 
-    public void setCld_sum(float cld_sum) {
+    public void setCld_sum(double cld_sum) {
         this.cld_sum = cld_sum;
     }
 
-    public float getCld_l_sum() {
+    public double getCld_l_sum() {
         return cld_l_sum;
     }
 
-    public void setCld_l_sum(float cld_l_sum) {
+    public void setCld_l_sum(double cld_l_sum) {
         this.cld_l_sum = cld_l_sum;
     }
 
-    public float getCld_m_sum() {
+    public double getCld_m_sum() {
         return cld_m_sum;
     }
 
-    public void setCld_m_sum(float cld_m_sum) {
+    public void setCld_m_sum(double cld_m_sum) {
         this.cld_m_sum = cld_m_sum;
     }
 
-    public float getCld_h_sum() {
+    public double getCld_h_sum() {
         return cld_h_sum;
     }
 
-    public void setCld_h_sum(float cld_h_sum) {
+    public void setCld_h_sum(double cld_h_sum) {
         this.cld_h_sum = cld_h_sum;
     }
 
@@ -293,59 +293,59 @@ public class ELE_OBSERVATION {
         this.cld_h3 = cld_h3;
     }
 
-    public float getTemp() {
+    public double getTemp() {
         return temp;
     }
 
-    public void setTemp(float temp) {
+    public void setTemp(double temp) {
         this.temp = temp;
     }
 
-    public float getTemp_max() {
+    public double getTemp_max() {
         return temp_max;
     }
 
-    public void setTemp_max(float temp_max) {
+    public void setTemp_max(double temp_max) {
         this.temp_max = temp_max;
     }
 
-    public float getTemp_min() {
+    public double getTemp_min() {
         return temp_min;
     }
 
-    public void setTemp_min(float temp_min) {
+    public void setTemp_min(double temp_min) {
         this.temp_min = temp_min;
     }
 
-    public float getRh() {
+    public double getRh() {
         return rh;
     }
 
-    public void setRh(float rh) {
+    public void setRh(double rh) {
         this.rh = rh;
     }
 
-    public float getDp() {
+    public double getDp() {
         return dp;
     }
 
-    public void setDp(float dp) {
+    public void setDp(double dp) {
         this.dp = dp;
     }
 
-    public float getQnh() {
+    public double getQnh() {
         return qnh;
     }
 
-    public void setQnh(float qnh) {
+    public void setQnh(double qnh) {
         this.qnh = qnh;
     }
 
-    public float getQfe() {
+    public double getQfe() {
         return qfe;
     }
 
-    public void setQfe(float qfe) {
+    public void setQfe(double qfe) {
         this.qfe = qfe;
     }
 
@@ -389,11 +389,11 @@ public class ELE_OBSERVATION {
         this.inserttime = inserttime;
     }
 
-    public float getGust_s() {
+    public double getGust_s() {
         return gust_s;
     }
 
-    public void setGust_s(float gust_s) {
+    public void setGust_s(double gust_s) {
         this.gust_s = gust_s;
     }
 
@@ -445,7 +445,7 @@ public class ELE_OBSERVATION {
         this.rvrs = rvrs;
     }
     public ELE_OBSERVATION(){};
-    public ELE_OBSERVATION(String id, String year, String month, String day, String hour, String minute, String wind_d, String wind_s, String wind_v, float visibility, float rvr, float mor, String pw, Date tw_begin, Date tw_end, int rain, float snow, float cld_sum, float cld_l_sum, float cld_m_sum, float cld_h_sum, String cld_l1, String cld_l2, String cld_l3, String cld_m1, String cld_m2, String cld_m3, String cld_h1, String cld_h2, String cld_h3, float temp, float temp_max, float temp_min, float rh, float dp, float qnh, float qfe, String remark1, String remark2, String ismodified, String operator, Date inserttime, float gust_s, String byyyy, String bmm, String bdd, String bhh, String cccc, String rvrs) {
+    public ELE_OBSERVATION(String id, String year, String month, String day, String hour, String minute, String wind_d, String wind_s, String wind_v, double visibility, double rvr, double mor, String pw, Date tw_begin, Date tw_end, int rain, double snow, double cld_sum, double cld_l_sum, double cld_m_sum, double cld_h_sum, String cld_l1, String cld_l2, String cld_l3, String cld_m1, String cld_m2, String cld_m3, String cld_h1, String cld_h2, String cld_h3, double temp, double temp_max, double temp_min, double rh, double dp, double qnh, double qfe, String remark1, String remark2, String ismodified, String operator, Date inserttime, double gust_s, String byyyy, String bmm, String bdd, String bhh, String cccc, String rvrs) {
         this.id = id;
         this.year = year;
         this.month = month;
@@ -496,4 +496,5 @@ public class ELE_OBSERVATION {
         this.cccc = cccc;
         this.rvrs = rvrs;
     }
+
 }
